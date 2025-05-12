@@ -1,46 +1,132 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Wedding</title>
+    <title>Melvin & Hope's Wedding</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <style>@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Ephesis&family=Quicksand:wght@300..700&display=swap');</style>
+
+    
 </head>
 <body>
-    <header>
-        <h1>Welcome to Our Wedding</h1>
-        <p>Join us in celebrating our love!</p>
+    <nav id="navbar-index">
+        <div id="hamburger">&#9776;</div> <!-- Hamburger icon -->
+        <ul id="nav-menu">
+            <li id="logo"><a href="#home">M & H</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="our-story.html">Our Story</a></li>
+            <li><a href="event-guide.html">Event Guide</a></li>
+            <li><a href="#entourage">Entourage</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#gift-guide">Gift Guide</a></li>
+            <li><a id="menu-border" href="#rsvp">RSVP</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <div class="title-line">
+                <h1>MELVIN</h1>
+                <h1 id="and">&</h1>
+                <h1>HOPE</h1>
+              </div>
+            <p id="bible-verse">Let marriage be held in honor among all.<br>Hebrews 13:4</p>
+            <button class="default-button open-invitation" onclick="location.href='#pink-section'">OPEN INVITATION</button>
+        </div>
     </header>
+
+    <section id="countdown-section">
+        <div id="countdown">
+          <span id="days" class="countdown-number">00</span> Days
+          <span id="hours" class="countdown-number">00</span> Hours
+          <span id="minutes" class="countdown-number">00</span> Minutes
+          <span id="seconds" class="countdown-number">00</span> Seconds
+        </div>
+      </section>
     
-    <section id="our-story">
-        <h2>Our Story</h2>
-        <p>Write about how you met and your journey together.</p>
+    <!-- Our Story section -->
+    <section id="pink-section">
+        <div id="our-story-section">
+            <div class="content">
+                <img src="Assets/photo-2-floral.png" alt="Our Story Photo">
+            </div>
+            <div class="text">
+                <h2>Fate found us when 
+                    the world stood still.</h2>
+                <p>Melvin and Hope’s journey began in March 2020, when fate brought them together under the most unexpected circumstances. 
+                    <br><br>Before the world came to a standstill, Melvin was on a mountain climbing expedition at Mt. Hamiguitan, while Hope was enjoying the island life in Siargao.  <a href="our-story.html"><strong>read more >>></strong></a></p>
+            </div>
+        </div>
+        
+    </section>
+    <!-- Invitation section -->
+    <section id="invitation-section">
+        <div id="youre-invited"> 
+            <div class="text">
+                <h2>Be part of our unforgettable moment.</h2>
+                <br>
+                <h3>DATE & TIME</h3>
+                <p>August 9, 2025 at 10:00 AM</p>
+                <br>
+                <br>
+                <h3>CEREMONY</h3>
+                <p>St. Francis of Assisi Parish Church 
+                    <br>General Trias, Cavite</p>
+                <br>
+                <br>
+                <h3>RECEPTION</h3>
+                <p>Calle Real Restaurant<br>Tanza, Cavite</p>
+            </div>
+            <img src="Assets/photo-3-floral.png" alt="Invitation Photo">
+        </div>
     </section>
 
-    <section id="event-details">
-        <h2>Event Details</h2>
-        <p>Date: [Wedding Date]</p>
-        <p>Venue: [Location]</p>
-        <p>Dress Code: [Formal/Semi-formal]</p>
+    <!-- Gift guide section -->
+    <section id="gift-section">
+        <div id="present">
+            <div class="text" id="your-presence">
+                <h2>Your presence at our 
+                    <br>wedding is the only 
+                    <br>present we require.</h2>
+            </div>
+            <div class="text" id="give-gift">
+                <p>But if you wish to bless us on our special day, 
+                    <br>a monetary gift would be truly appreciated.</p>
+                <br>
+                <button class="default-button btn open-invitation">Give a Gift</button>
+            </div>
+        </div>
     </section>
 
-    <section id="rsvp">
-        <h2>RSVP</h2>
-        <form>
-            <label>Name: <input type="text" required></label>
-            <label>Will you attend?
-                <select>
-                    <option>Yes</option>
-                    <option>No</option>
-                </select>
-            </label>
-            <button type="submit">Submit</button>
-        </form>
+    <section id="gift-guide-photo">
+        <img id="gift-photo" src="Assets/photo-4.jpg" alt="Gift Guide Photo">
     </section>
 
-    <footer>
-        <p>&copy; 2025 Your Names</p>
-    </footer>
+    <!-- RSVP section -->
+    <section id="rsvp-section">
+        <div id="rsvp">
+            <div class="text" id="we-hope">
+                <h2>We hope to see you 
+                    <br>from the altar.</h2>
+            </div>
+            <div class="text" id="cheers">
+                <p>We kindly request your response by July 1, 2025. <br><br>Cheers!</p>
+            </div>
+        </div>
+
+        <div>
+            <!-- <button id="rsvp-button" onclick="location.href='forms.gle/22AwmzbaR7Rg8vHp9'">RSVP now</button> -->
+            <a id="rsvp-button" class="default-button btn open-invitation" href="https://forms.gle/22AwmzbaR7Rg8vHp9" target="_blank" rel="noopener noreferrer">RSVP now</a>
+
+        </div>
+        
+        <div>
+            <img id="pink-bike" src="Assets/pink-bike.png" alt="Our Story Photo">
+        </div>
+    </section>
 </body>
 </html>
-
