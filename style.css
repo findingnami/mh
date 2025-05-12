@@ -652,27 +652,52 @@ background-color: #F6D5CF; /* Change this to your desired solid color */
     #youre-invited,
     #present,
     #rsvp {
-        display: flex;
+        /* display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
         gap: 20px;
-        padding: 20px;
+        padding: 20px; */
+        grid-template-columns: 1fr; /* Set to a single column */
+        padding: 10px; /* Adjust padding for smaller screens */
     }
 
     #our-story-section img,
     #youre-invited img,
     #gift-photo,
     #pink-bike {
-        max-width: 90%;
+        /* max-width: 90%;
+        height: auto; */
+        max-width: 100%; /* Ensure images are fully responsive */
         height: auto;
+        grid-column: 1; /* Place images in the first column */
     }
 
-    #gift-photo,
+    #our-story-section .text,
+    #youre-invited .text,
+    #present .text,
+    #rsvp .text {
+        grid-column: 1; /* Place text in the second column */
+        padding: 10px; /* Add some padding around the text */
+    }
+
+    #our-story-1, 
+    #our-story-2, 
+    #youre-invited, 
+    #present {
+        display: block; /* Stack the content vertically */
+    }
+
+    #our-story-1 .image-right,
+    #our-story-2 .image-left {
+        margin: 0; /* Remove margins for a clean layout */
+    }
+
+    /* #gift-photo,
     #pink-bike {
         display: block;
         margin: 0 auto;
-    }
+    } */
 
     .hero h1 {
         font-size: 60px;
