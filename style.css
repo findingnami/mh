@@ -765,7 +765,7 @@ background-color: #F6D5CF; /* Change this to your desired solid color */
 
     .guide-section {
         flex-direction: column;
-        align-items: center;
+        align-items: left;
     }
 
     .guide-section img {
@@ -784,7 +784,7 @@ background-color: #F6D5CF; /* Change this to your desired solid color */
 
     .text-guide {
         padding: 20px;
-        text-align: center;
+        text-align: left;
     }
 
     .dress-code-h3 {
