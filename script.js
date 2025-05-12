@@ -47,3 +47,14 @@ document.addEventListener("DOMContentLoaded", function () {
       navMenu.classList.toggle('show');
     });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const navMenu = document.getElementById('nav-menu');
+    const navLinks = navMenu.querySelectorAll('a');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('show');
+      });
+    });
+  });
