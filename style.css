@@ -820,5 +820,22 @@ background-color: #F6D5CF; /* Change this to your desired solid color */
     .dress-code-h3 {
         font-size: 20px;
     }
+
+    .wedding-footer {
+    padding: 1.5rem 1rem;
+  }
+
+  .wedding-footer .footer-content p {
+    font-size: 0.95rem;
+  }
+
+  .wedding-footer .footer-content .hashtag {
+    font-size: 1rem;
+  }
+
+  .wedding-footer .footer-content p:last-child {
+    font-size: 0.8rem;
+  }
+}
   
 }
