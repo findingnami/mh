@@ -764,12 +764,15 @@ background-color: #F6D5CF; /* Change this to your desired solid color */
       }
 
     .guide-section {
+        display: flex;
         flex-direction: column;
-        align-items: left;
+        align-items: flex-start; /* use flex-start, not "left" */
+        justify-content: flex-start; /* aligns items to the top */
     }
 
     .guide-section img {
         width: 80px; /* Smaller images on mobile */
+        
     }
 
     .color-palette {
