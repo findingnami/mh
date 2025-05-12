@@ -1,30 +1,742 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background: #f9f7f3;
-    color: #333;
+html {
+    scroll-behavior: smooth;
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensures consistent sizing */
 }
 
-header {
-    background: #e3c6a0;
-    padding: 20px;
+body {
+    background-color: #fffafb;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    width: 100%;
+    height: 100%;
+    
+}
+
+#body-padding {
+    padding-top: 80px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+nav {
+    position: fixed; /* Stays at the top when scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent; /* Fully transparent */
+    padding: 15px 0;
+    z-index: 1000; /* Ensures navbar stays on top */
+}
+
+.navbar {
+    background-color: #F6D5CF;
+    height: 80px;
+}
+
+#navbar-index {
+    background-color: transparent;
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%
+}
+
+ul a {
+    text-decoration: none;
+    color: #000000;
+}
+
+ul li {
+    display: flex;
+    align-items: center;
+}
+
+a {
+    text-decoration: none; /* Removes underline */
+  color: inherit; /* Inherits the color of the surrounding text (or use a specific color like #000 for black) */
+}
+
+#logo {
+    font-family: 'Ephesis';
+    font-size: 32px;
+}
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    background-image: url('Assets/photo-1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax effect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5); /* White overlay */
+    opacity: 0.6;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
 }
 
 h1 {
-    color: white;
+    font-family: 'EB Garamond';
+    font-size: 90px;
+    font-weight: 300;
+    color: #7D5060;
+    /* text-shadow: 2px 2px 5px rgba(128, 128, 128, 0.552); */
 }
 
-section {
-    margin: 20px;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+h2, h3, h4 {
+    color: #594A50;
+    line-height: 1.6;
 }
 
-form {
+#and {
+    font-family: "Ephesis";
+    font-size: 200px;
+    font-weight: 700;
+}
+
+.title-line {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    align-items: center;
+    gap: 3rem; /* optional spacing between items */
+}
+  
+.title-line h1 {
+    margin: 0; /* remove default margin if needed */
+}  
+
+p, .text {
+    color: #594A50;
+    line-height: 1.6;
 }
 
+#bible-verse {
+    color: white;
+    font-size: 32px;
+    font-family: 'EB Garamond', serif;
+    margin-bottom: 40px;
+}
+
+.default-button {
+    display: inline-block;
+    padding: 12px 24px;  /* Button size */
+    font-size: 24px;
+    color: #000000; /* Text color */
+    background-color: transparent; /* Transparent background */
+    border: 1px solid #000000; /* Thin solid border */
+    border-radius: 0; /* No rounded corners for a rectangular shape */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth effect */
+}
+
+.default-button:hover {
+    background-color: #7D5060; /* Purple on hover */
+    border: 1px solid #7D5060; /* Thin solid border */
+    color: white; /* White text on hover */
+}
+
+#open-invitation {
+    margin-top: 60px;
+}
+
+#pink-section {
+    background-color: #F6D5CF; /* Set background color */
+    padding-top: 80px;
+    padding-bottom: 40px;
+    width: 100%; /* Ensure full width */
+}
+
+#our-story-section {
+    max-width: 1200px;
+    width: 90%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 20px; /* Space between image and text */
+    align-items: center; /* Align items vertically */
+    margin: auto; /* Center the container */
+    padding: 20px;
+    background-color: transparent;
+}
+
+#our-story-section img {
+    max-width: 500px; /* Makes the image responsive */
+    height: auto;
+    display: block; /* Removes extra spacing */
+    grid-column: 1 / 2;
+}
+
+#our-story-section .text {
+    color: #333;
+    line-height: 1.6;
+    grid-column: 2 / 3;
+}
+
+h2 {
+    font-family: 'EB Garamond';
+    color:#7D5060;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 32px;
+}
+
+#invitation-section {
+    padding-top: 80px;
+    padding-bottom: 40px;
+    width: 100%; /* Ensure full width */
+}
+
+#invitation-section h2, #invitation-section h3, #invitation-section p {
+    text-align: center;
+}
+
+#youre-invited {
+    max-width: 1200px;
+    width: 90%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 20px; /* Space between image and text */
+    align-items: center; /* Align items vertically */
+    margin: auto; /* Center the container */
+    padding: 20px;
+    background-color: transparent;
+}
+
+#youre-invited .text {
+    color: #333;
+    line-height: 1.6;
+    grid-column: 1 / 2;
+}
+
+#youre-invited img {
+    max-width: 500px; /* Makes the image responsive */
+    height: auto;
+    display: block; /* Removes extra spacing */
+    grid-column: 2 / 3;
+}
+
+#gift-section {
+    background-color: #F6D5CF; /* Set background color */
+    padding-top: 80px;
+    padding-bottom: 40px;
+    width: 100%; /* Ensure full width */
+}
+
+#present {
+    max-width: 1200px;
+    width: 90%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 20px; /* Space between image and text */
+    align-items: center; /* Align items vertically */
+    margin: auto; /* Center the container */
+    padding: 20px;
+    background-color: transparent;
+}
+
+#your-presence {
+    grid-column: 1 / 2;
+}
+
+#give-gift {
+    grid-column: 2 / 3;
+}
+
+#gift-guide-photo {
+    width: 100%;
+    height: 50vh;
+}
+
+#gift-photo {
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;        /* Crop to fill without distortion */
+    display: block;
+    max-width: none; 
+    object-position: top;
+}
+
+#rsvp-section {
+    padding-top: 80px;
+    padding-bottom: 40px;
+    width: 100%; /* Ensure full width */
+}
+
+#rsvp {
+    max-width: 1200px;
+    width: 90%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 20px; /* Space between image and text */
+    align-items: center; /* Align items vertically */
+    margin: auto; /* Center the container */
+    padding: 20px;
+    background-color: transparent;
+}
+
+#we-hope {
+    grid-column: 1 / 2;
+}
+
+#cheers {
+    grid-column: 2 / 3;
+}
+
+#rsvp-button {
+    display: block;
+    margin: 20px auto;
+}
+
+#pink-bike {
+    display: block;
+    margin-left: auto;
+}
+
+#pink-nav {
+background-color: #F6D5CF; /* Change this to your desired solid color */
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky; /* Keeps it at the top while scrolling */
+  top: 0;
+  z-index: 1000;
+}
+
+#our-story-hero-section {
+    width: 100%;
+    height: 80vh;
+}
+
+#our-story-hero {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;        /* Crop to fill without distortion */
+    display: block;
+    max-width: none; 
+}
+
+#photo-6, #photo-7 {
+    max-width: 500px; /* Makes the image responsive */
+    height: auto;
+    display: block; /* Removes extra spacing */
+}
+
+.story-section-white {
+    padding-top: 80px;
+    padding-bottom: 40px;
+    width: 100%; /* Ensure full width */
+}
+
+#our-story-1 {
+    max-width: 1200px;
+    width: 90%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 20px; /* Space between image and text */
+    align-items: center; /* Align items vertically */
+    margin: auto; /* Center the container */
+    padding: 20px;
+    background-color: transparent;
+}
+
+#our-story-text-1 {
+    color: #333;
+    line-height: 1.6;
+    grid-column: 1 / 2;
+}
+
+#our-story-image-1 {
+    max-width: 500px; /* Makes the image responsive */
+    height: auto;
+    display: block; /* Removes extra spacing */
+    grid-column: 2 / 3;
+}
+
+.story-section-pink {
+    background-color: #F6D5CF;
+    padding-top: 80px;
+    padding-bottom: 40px;
+    width: 100%; /* Ensure full width */
+}
+
+#our-story-2 {
+    max-width: 1200px;
+    width: 90%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 20px; /* Space between image and text */
+    align-items: center; /* Align items vertically */
+    margin: auto; /* Center the container */
+    padding: 20px;
+    background-color: transparent;
+}
+
+#our-story-image-2 {
+    max-width: 500px; /* Makes the image responsive */
+    height: auto;
+    display: block; /* Removes extra spacing */
+    grid-column: 1 / 2;
+}
+
+#our-story-text-2 {
+    color: #333;
+    line-height: 1.6;
+    grid-column: 2 / 3;
+}
+
+.color-palette {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.color-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.guide-section {
+    max-width: 1200px;
+    width: 90%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 25% 75%; /* Two equal columns */
+    gap: 20px; /* Space between image and text */
+    align-items: start; /* Align items vertically */
+    margin: auto; /* Center the container */
+    padding: 20px;
+    background-color: transparent;
+}
+
+.image-guide {
+    max-width: 150px; /* Makes the image responsive */
+    height: auto;
+    display: block; /* Removes extra spacing */
+    grid-column: 1 / 2;
+}
+
+.text-guide {
+    color: #333;
+    line-height: 1.6;
+    grid-column: 2 / 3;
+}
+
+#color-palette {
+    text-align: center;
+}
+
+.entourage {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 40px 20px;
+}
+  
+.entourage h2,
+.entourage h3,
+.entourage h4 {
+    font-family: 'EB Garamond', serif;
+    margin-bottom: 10px;
+}
+  
+.entourage-pair {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.2rem;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+  
+.entourage-pair p {
+    width: 45%;
+    margin: 0;
+    line-height: 1.6;
+}
+  
+.entourage-pair .left {
+    text-align: right;
+}
+  
+.entourage-pair .right {
+    text-align: left;
+}
+  
+.centered {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.qr-placeholder {
+    width: 150px;
+    height: 150px;
+    background-color: #f0f0f0;
+    color: #777;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    border: 1px dashed #ccc;
+    margin: 10px 0 20px;
+  }
+
+  .qr-section {
+    display: flex;
+    gap: 20px; /* space between the QR placeholders */
+    justify-content: center; /* center the row horizontally (optional) */
+    flex-wrap: wrap; /* ensures responsiveness on smaller screens */
+    margin: 20px 0;
+  }
+  
+  .qr-placeholder {
+    width: 300px;
+    height: auto;
+    background-color: #f0f0f0;
+    color: #777;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    border: 1px dashed #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+/* General text layout for Gift Registry section */
+.gift-registry {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 20px 30px;
+    font-family: 'Quicksand', sans-serif;
+    line-height: 1.8;
+    color: #333;
+}
+
+.gift-registry p {
+    margin-bottom: 12px;
+}
+
+#countdown-section {
+    text-align: center;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: 'Quicksand', sans-serif;
+  }
+  
+  #countdown {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #BB8995; /* or your wedding theme color */
+  }
+  
+  #countdown span {
+    margin: 0 8px;
+  }
+
+.countdown-number {
+    font-size: 3rem;
+  }
+
+#rsvp-button {
+    width: 200px;
+    text-align: center;
+}
+
+#menu-border {
+    border: 1px solid #333;
+    padding: 10px 30px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth effect */
+    
+}
+
+#menu-border:hover {
+    background-color: #7D5060; /* Purple on hover */
+    border: 1px solid #7D5060; /* Thin solid border */
+    color: white; /* White text on hover */
+}
+
+.bearers {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem; /* optional spacing between columns */
+    text-align: center;
+    margin-bottom: 2rem;
+}
+  
+.bearer {
+    flex: 1;
+}
+
+.entourage-label {
+    margin-bottom: 0; /* or try 0 for no space */
+}
+
+#wedding-entourage-h2 {
+    margin-bottom: 0;
+}
+
+#wedding-entourage-h3 {
+    font-family: 'Ephesis';
+    font-size: 2rem;
+}
+
+.dress-code-h3 {
+    color: #7D5060;
+}
+
+#hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px 20px;
+    z-index: 1100;
+    color: #000;
+  }
+
+
+/* mobile */
+
+/* Responsive adjustments for screens smaller than 768px */
+@media screen and (max-width: 768px) {
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .title-line {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    #our-story-section,
+    #youre-invited,
+    #present,
+    #rsvp {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    #our-story-section img,
+    #youre-invited img,
+    #gift-photo,
+    #pink-bike {
+        max-width: 90%;
+        height: auto;
+    }
+
+    #gift-photo,
+    #pink-bike {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .hero h1 {
+        font-size: 60px;
+    }
+
+    #and {
+        font-size: 120px;
+    }
+
+    #bible-verse {
+        font-size: 24px;
+        padding: 0 15px;
+    }
+
+    .default-button {
+        font-size: 18px;
+        padding: 10px 20px;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    #hamburger {
+      display: block;
+      font-size: 30px;
+      cursor: pointer;
+      padding: 1rem;
+      z-index: 1001;
+    }
+  
+    #nav-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease, opacity 0.5s ease;
+      opacity: 0;
+      flex-direction: column;
+      align-items: center;
+      padding-left: 1.5rem; /* Add left margin inside the menu */
+      background-color: #fffafb;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      
+    }
+  
+    #nav-menu.show {
+      max-height: 500px;
+      opacity: 1;
+      padding: 1rem 0;
+      padding-left: 1.5rem; /* Add left margin inside the menu */
+    }
+  
+    #nav-menu li {
+        width: 100%;
+        padding: 0.75rem 0;
+        text-align: left;
+        border-bottom: 1px solid #ddd; /* Adds a line between items */
+    }
+
+    #nav-menu li:last-child {
+        border-bottom: none; /* Removes the last line */
+      }
+    
+  
+}
