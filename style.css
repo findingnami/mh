@@ -631,6 +631,33 @@ background-color: #F6D5CF; /* Change this to your desired solid color */
     color: #000;
   }
 
+.wedding-footer {
+  background-color: #fffafb;
+  text-align: center;
+  padding: 2rem 1rem;
+  border-top: 1px solid #e0d4d4;
+  font-family: 'Georgia', serif;
+  color: #5a4d4d;
+}
+
+.wedding-footer .footer-content p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.wedding-footer .footer-content .hashtag {
+  font-weight: bold;
+  color: #d77474;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+.wedding-footer .footer-content p:last-child {
+  font-size: 0.9rem;
+  color: #a39c9c;
+  margin-top: 2rem;
+}
+
 
 /* mobile */
 
