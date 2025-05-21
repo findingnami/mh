@@ -89,15 +89,15 @@ a {
     text-align: center;
 }
 
-/* .overlay {
+.overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* background: rgba(255, 255, 255, 0.5); /* White overlay
+    background: rgba(255, 255, 255, 0.5); /* White overlay */
     opacity: 0.6;
-}*/
+}
 
 .hero-content {
     position: relative;
@@ -108,7 +108,7 @@ h1 {
     font-family: 'Imperial Script';
     font-size: 200px;
     font-weight: 400;
-    color:#C08081;
+    color: #fff;
     text-shadow: 2px 2px 5px rgba(245, 245, 245, 1); 
 }
 
