@@ -107,9 +107,9 @@ a {
 h1 {
     font-family: 'Imperial Script';
     font-size: 120px;
-    font-weight: 300;
-    color: #D99985;
-    /* text-shadow: 2px 2px 5px rgba(128, 128, 128, 0.552); */
+    font-weight: 400;
+    color:#C08081;
+    text-shadow: 2px 2px 5px rgba(245, 245, 245, 1); 
 }
 
 h2, h3, h4 {
