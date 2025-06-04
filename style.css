@@ -1154,4 +1154,8 @@ background-color: #F6D5CF; /* Change this to your desired solid color */
     margin-left: 20px;
 }
 
+#transition {
+    gap: 2rem;
+}
+
 }
