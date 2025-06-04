@@ -75,3 +75,25 @@ const playBtn = document.getElementById('playMusicBtn');
     bgMusic.play();
     playBtn.style.display = 'none'; // hide button after play (optional)
   });
+
+
+  const bgMusic = document.getElementById('bgMusic');
+
+  function unmuteAndPlay() {
+    bgMusic.muted = false;
+    bgMusic.play().catch(err => {
+      // Optional: Handle any playback errors
+      console.log("Playback failed:", err);
+    });
+
+    // Remove the event listeners after first interaction
+    document.removeEventListener('click', unmuteAndPlay);
+    document.removeEventListener('touchstart', unmuteAndPlay);
+    document.removeEventListener('scroll', unmuteAndPlay);
+  }
+
+  // Listen for any user interaction
+  document.addEventListener('click', unmuteAndPlay);
+  document.addEventListener('touchstart', unmuteAndPlay);
+  document.addEventListener('scroll', unmuteAndPlay);
+
