@@ -6,26 +6,30 @@
         <title>Melvin & Hope's Wedding</title>
         <link rel="stylesheet" href="style.css">
         <script defer src="script.js"></script>
-        <style>
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Ephesis&family=Imperial+Script&family=Quicksand:wght@300..700&display=swap');
-</style>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
     
         
     </head>
     <body  id="body-padding">
-        <nav id="navbar-index">
-        <div id="hamburger">&#9776;</div> <!-- Hamburger icon -->
-        <ul id="nav-menu">
-            <li id="logo"><a href="index.html">M & H</a></li>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="our-story.html">Our Story</a></li>
-            <li><a href="event-guide.html">Event Guide</a></li>
-            <li><a href="entourage.html">Entourage</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="gift-registry.html">Gift Guide</a></li>
-            <li><a id="menu-border" href="https://forms.gle/22AwmzbaR7Rg8vHp9" target="_blank">RSVP</a></li>
-        </ul>
-    </nav>
+        <!--<nav class="navbar">
+            <div id="hamburger">&#9776;</div> <!-- Hamburger icon
+            <ul id="nav-menu">
+                <li id="logo"><a href="#home">M & H</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="our-story.html">Our Story</a></li>
+                <li><a href="event-guide.html">Event Guide</a></li>
+                <li><a href="#entourage">Entourage</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#gift-guide">Gift Guide</a></li>
+                <li><a id="menu-border" href="#rsvp">RSVP</a></li>
+            </ul>
+        </nav> -->
 
     <!-- Hero Section -->
     <section id="our-story-hero-section">
@@ -68,15 +72,31 @@
         </div>
     </section>
 
-    <!-- Footer (Optional) -->
     <footer class="wedding-footer">
       <div class="footer-content">
         <p>With love, laughter, and happily ever after…</p>
         <p>Join us in celebrating our big day. 💕</p>
         <p class="hashtag">#SayIDoWithMoradillos</p>
+
+        <audio controls autoplay loop>
+        <source src="Assets/background-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+        </audio>
+
         <p>&copy; 2025 Melvin & Hope's Wedding. All rights reserved.</p>
       </div>
     </footer>
+
+    <div class="bottom-nav">
+        <a href="invitation.html" title="Start Here"><i class="fas fa-home"></i></a>
+        <a href="invitation.html#pink-section" title="Our Story"><i class="fas fa-heart"></i></a>
+        <a href="invitation.html#invitation-section" title="Invitation"><i class="fas fa-envelope"></i></a>
+        <a href="invitation.html#venue" title="Venue"><i class="fas fa-map-marker-alt"></i></a>
+        <a href="invitation.html#gallery" title="Gallery"><i class="fas fa-camera-retro"></i></a>
+        <a href="gift-registry.html" title="Gifts"><i class="fas fa-gift"></i></a>
+        <a href="https://forms.gle/22AwmzbaR7Rg8vHp9" target="_blank" title="RSVP"><i class="fas fa-check-circle"></i></a>
+    </div>
+
 
 </body>
 </html>
