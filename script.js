@@ -1,4 +1,3 @@
-/* script.js */
 document.addEventListener("DOMContentLoaded", function() {
     const links = document.querySelectorAll(".navbar a");
     
@@ -77,9 +76,9 @@ const playBtn = document.getElementById('playMusicBtn');
   });
 
 
-  const bgMusic = document.getElementById('bgMusic');
+const bgMusic = document.getElementById('bgMusic');
 
-  function unmuteAndPlay() {
+function unmuteAndPlay() {
     bgMusic.muted = false;
     bgMusic.play().catch(err => {
       // Optional: Handle any playback errors
