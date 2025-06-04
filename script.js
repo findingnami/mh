@@ -48,13 +48,30 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-    const navMenu = document.getElementById('nav-menu');
-    const navLinks = navMenu.querySelectorAll('a');
+const images = document.querySelectorAll('.carousel-img');
+  let current = 0;
 
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('show');
-      });
-    });
+  setInterval(() => {
+    images[current].classList.remove('active');
+    current = (current + 1) % images.length;
+    images[current].classList.add('active');
+  }, 4000); // every 4 seconds
+
+
+const gallery = document.querySelector('.gallery');
+  
+  gallery.addEventListener('mouseover', () => {
+    gallery.style.animationPlayState = 'paused';
+  });
+
+  gallery.addEventListener('mouseout', () => {
+    gallery.style.animationPlayState = 'running';
+  });
+
+const playBtn = document.getElementById('playMusicBtn');
+  const bgMusic = document.getElementById('bgMusic');
+
+  playBtn.addEventListener('click', () => {
+    bgMusic.play();
+    playBtn.style.display = 'none'; // hide button after play (optional)
   });
