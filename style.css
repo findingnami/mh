@@ -17,10 +17,6 @@ body {
     
 }
 
-#body-padding {
-    padding-top: 80px;
-}
-
 img {
     max-width: 100%;
     height: auto;
@@ -37,10 +33,10 @@ nav {
     z-index: 1000; /* Ensures navbar stays on top */
 }
 
-.navbar {
+/* .navbar {
     background-color: #F6D5CF;
     height: 80px;
-}
+} */
 
 #navbar-index {
     background-color: transparent;
@@ -77,39 +73,108 @@ a {
 }
 
 .hero {
-    width: 100%;
-    height: 100vh;
-    background-image: url('Assets/photo-1.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* Parallax effect */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  width: 100%;
+  height: 100vh;
+  background-image: url('Assets/hero-image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: transform 1s ease, opacity 1s ease; /* Ensure transition here */
+  position: relative;
+  z-index: 1; 
 }
 
-.overlay {
+.hero .overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.5); /* White overlay */
-    opacity: 0.6;
-}
-
-.hero-content {
-    position: relative;
+    background: rgba(0, 0, 0, 0.25); /* Dark overlay */
     z-index: 1;
 }
 
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.hero-h1 {
+    display: flex;
+    gap: 2rem; /* Adjust the spacing between "Melvin" and "Hope" */
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2; /* Ensure it appears above the overlay */
+}
+
+.btn {
+  position: absolute;
+  bottom: 8rem; /* Pushes it 3rem up from the bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  background-color: #DEB0B9;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+
+.btn:hover {
+  background-color: #9DB4AB;
+}
+
+.carousel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.carousel-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+.carousel-img.active {
+  opacity: 1;
+}
+
+
 h1 {
-    font-family: 'Imperial Script';
-    font-size: 200px;
-    font-weight: 400;
-    color: #fff;
-    /* text-shadow: 2px 2px 5px rgba(245, 245, 245, 1); */
+    font-family: 'Corinthia';
+    font-size: 7rem;
+    font-weight: 700;
+    color:#fff;
+    margin: 0;
+    /*text-shadow: 2px 2px 5px rgba(245, 245, 245, 1) **/
+    line-height: 0.55
+; 
 }
 
 h2, h3, h4 {
@@ -140,28 +205,30 @@ p, .text {
 
 #bible-verse {
     color: white;
-    font-size: 32px;
-    font-family: 'EB Garamond', serif;
+    font-size: 1.5rem;
+    font-family: 'Quicksand', sans-serif;
     margin-bottom: 40px;
+    z-index: 2;
 }
 
+/* 
 .default-button {
     display: inline-block;
-    padding: 12px 24px;  /* Button size */
+    padding: 12px 24px;  /* Button size 
     font-size: 24px;
-    color: #000000; /* Text color */
-    background-color: transparent; /* Transparent background */
-    border: 1px solid #000000; /* Thin solid border */
-    border-radius: 0; /* No rounded corners for a rectangular shape */
+    color: #000000; /* Text color 
+    background-color: transparent; Transparent background 
+    border: 1px solid #000000; Thin solid border 
+    border-radius: 0; No rounded corners for a rectangular shape 
     cursor: pointer;
-    transition: all 0.3s ease; /* Smooth effect */
+    transition: all 0.3s ease; 
 }
 
 .default-button:hover {
-    background-color: #7D5060; /* Purple on hover */
-    border: 1px solid #7D5060; /* Thin solid border */
-    color: white; /* White text on hover */
-}
+    background-color: #7D5060; /* Purple on hover 
+    border: 1px solid #7D5060; /* Thin solid border 
+    color: white; /* White text on hover *
+} */
 
 #open-invitation {
     margin-top: 60px;
@@ -245,6 +312,85 @@ h2 {
     grid-column: 2 / 3;
 }
 
+.card-section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  overflow: hidden; /* ensures the pseudo-element doesn't spill out */
+  z-index: 1;
+}
+
+.card-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('Assets/card-bg.png');
+  background-size: cover;
+  background-position: center;
+  filter: blur(1px);
+  z-index: -1; /* send the background behind the content */
+}
+
+
+.card {
+  display: flex;
+  gap: 2rem; /* space between images */
+  flex-wrap: wrap; /* wrap on smaller screens */
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+  max-width: 500px; /* or whatever size fits your design */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.gallery-section {
+  overflow: hidden;
+  width: 100%;
+}
+
+.gallery-wrapper {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+}
+
+.gallery {
+  display: flex;
+  animation: scroll-left 30s linear infinite;
+}
+
+.gallery-img {
+  height: auto;
+  max-height: 400px;
+  width: auto;
+  flex-shrink: 0;
+  object-fit: cover; /* or "contain" depending on your preference */
+  /* margin-right: 1rem; /* spacing between images */
+}
+
+/* Autoscroll animation */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+
 #gift-section {
     background-color: #F6D5CF; /* Set background color */
     padding-top: 80px;
@@ -287,6 +433,22 @@ h2 {
     object-position: top;
 }
 
+#gift-button {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  background-color: #D99985;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  border-style: none;
+  transition: background-color 0.3s ease;
+  z-index: 2;
+}
+
+#gift-button:hover {
+  background-color: #9DB4AB;
+}
+
 #rsvp-section {
     padding-top: 80px;
     padding-bottom: 40px;
@@ -315,8 +477,21 @@ h2 {
 }
 
 #rsvp-button {
-    display: block;
-    margin: 20px auto;
+  display: block;
+  margin: auto;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  background-color: #9DB4AB;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  border-style: none;
+  transition: background-color 0.3s ease;
+  z-index: 2;
+}
+
+#rsvp-button:hover {
+  background-color: #DEB0B9;
 }
 
 #pink-bike {
@@ -388,7 +563,7 @@ background-color: #F6D5CF; /* Change this to your desired solid color */
 
 .story-section-pink {
     background-color: #F6D5CF;
-    padding-top: 80px;
+    padding-top: 40px;
     padding-bottom: 40px;
     width: 100%; /* Ensure full width */
 }
@@ -420,17 +595,23 @@ background-color: #F6D5CF; /* Change this to your desired solid color */
 }
 
 .color-palette {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
+/* Keep circle size consistent */
 .color-circle {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
 }
+
+
+
 
 .guide-section {
     max-width: 1200px;
@@ -441,14 +622,15 @@ background-color: #F6D5CF; /* Change this to your desired solid color */
     gap: 20px; /* Space between image and text */
     align-items: start; /* Align items vertically */
     margin: auto; /* Center the container */
-    padding: 20px;
+    padding: 50px 20px;
     background-color: transparent;
 }
 
 .image-guide {
-    max-width: 150px; /* Makes the image responsive */
+    /* max-width: 200px; /* Makes the image responsive */
     height: auto;
-    display: block; /* Removes extra spacing */
+    display: block; /* Removes extra spacing  */
+    margin: 0 auto;
     grid-column: 1 / 2;
 }
 
@@ -456,7 +638,18 @@ background-color: #F6D5CF; /* Change this to your desired solid color */
     color: #333;
     line-height: 1.6;
     grid-column: 2 / 3;
+    padding: 1rem;
+    max-width: 100%;
+    box-sizing: border-box;
 }
+
+.text-guide iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3; /* Maintains proportions on resize */
+  border: 0;
+}
+
 
 #color-palette {
     text-align: center;
@@ -542,7 +735,7 @@ background-color: #F6D5CF; /* Change this to your desired solid color */
 /* General text layout for Gift Registry section */
 .gift-registry {
     max-width: 800px;
-    margin: 60px auto;
+    margin: 40px auto; 
     padding: 20px 30px;
     font-family: 'Quicksand', sans-serif;
     line-height: 1.8;
@@ -631,6 +824,19 @@ background-color: #F6D5CF; /* Change this to your desired solid color */
     color: #000;
   }
 
+#nav-menu {
+  display: none;
+  flex-direction: column;
+  background-color: white;
+  position: fixed;
+  top: 60px;
+  right: 0;
+  width: 100%;
+  z-index: 999;
+  text-align: right;
+  padding: 1rem;
+}
+
 .wedding-footer {
   background-color: #fffafb;
   text-align: center;
@@ -656,8 +862,36 @@ background-color: #F6D5CF; /* Change this to your desired solid color */
   font-size: 0.9rem;
   color: #a39c9c;
   margin-top: 2rem;
+  margin-bottom: 5rem;
 }
 
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 5rem;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem 0;
+  z-index: 1000;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.bottom-nav a {
+  color: #000;
+  font-size: 2.5rem;
+  text-decoration: none;
+}
+
+.bottom-nav a:hover {
+  color: #DEB0B9;
+}
+
+#venue-image {
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3); /* x-offset, y-offset, blur, color */
+}
 
 /* mobile */
 
@@ -673,6 +907,14 @@ background-color: #F6D5CF; /* Change this to your desired solid color */
     .title-line {
         flex-direction: column;
         gap: 0.5rem;
+    }
+
+    #pink-section, #gift-section {
+        padding-top: 10px;
+    }
+
+    #gift-guide-photo {
+        height: 20vh;
     }
 
     #our-story-section,
@@ -697,7 +939,8 @@ background-color: #F6D5CF; /* Change this to your desired solid color */
         height: auto; */
         max-width: 100%; /* Ensure images are fully responsive */
         height: auto;
-        grid-column: 1; /* Place images in the first column */
+        /* grid-column: 1; /* Place images in the first column */
+        margin: 0 auto;
     }
 
     #our-story-section .text,
@@ -726,8 +969,30 @@ background-color: #F6D5CF; /* Change this to your desired solid color */
         margin: 0 auto;
     } */
 
-    .hero h1 {
-        font-size: 60px;
+    .hero-h1 {
+        flex-direction: column;
+        gap: 0.5rem;
+    /* flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vh; /* Ensures spacing between top and bottom
+    font-size: 3rem;
+    position: absolute;
+    top: 5rem;
+    bottom: 8rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem; */
+    }
+
+    .hero-h1 h1:first-child {
+    align-self: flex-start;
+    }
+
+    .hero-h1 h1:last-child {
+    align-self: flex-end;
     }
 
     #and {
@@ -735,18 +1000,16 @@ background-color: #F6D5CF; /* Change this to your desired solid color */
     }
 
     #bible-verse {
-        font-size: 24px;
-        padding: 0 15px;
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        padding: 0 1rem;
     }
 
     .default-button {
         font-size: 18px;
         padding: 10px 20px;
     }
-}
 
-/* Mobile styles */
-@media (max-width: 768px) {
     #hamburger {
       display: block;
       font-size: 30px;
@@ -803,19 +1066,22 @@ background-color: #F6D5CF; /* Change this to your desired solid color */
     }
 
     .color-palette {
-        flex-wrap: wrap;
-        justify-content: space-around;
-    }
+    max-width: 340px; /* Controls how many fit per row */
+    margin: 0 auto;
+  }
 
-    .color-circle {
-        width: 40px;
-        height: 40px; /* Reduce circle size on smaller screens */
-    }
+  .color-circle {
+    flex: 0 0 auto;
+  }
 
-    .text-guide {
-        padding: 20px;
-        text-align: left;
-    }
+   .text-guide {
+    padding: 1rem;
+  }
+
+  .text-guide h3,
+  .text-guide p {
+    font-size: 1rem;
+  }
 
     .dress-code-h3 {
         font-size: 20px;
@@ -823,7 +1089,7 @@ background-color: #F6D5CF; /* Change this to your desired solid color */
 
     .wedding-footer {
     padding: 1.5rem 1rem;
-  }
+    }
 
   .wedding-footer .footer-content p {
     font-size: 0.95rem;
@@ -836,6 +1102,55 @@ background-color: #F6D5CF; /* Change this to your desired solid color */
   .wedding-footer .footer-content p:last-child {
     font-size: 0.8rem;
   }
+
+  #women-attire {
+    padding-top: 20px;
+  }
+
+  .color-palette {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .color-circle {
+    width: 100px;
+    height: 100px;
+    flex: 0 0 auto; /* Prevent shrinking/stretching */
+  }
+
+  #venue-image {
+    width: 500px;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .image-guide-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .gallery-img {
+    max-height: 200px;     /* slightly smaller for mobile */
+    max-width: 90vw;       /* allow landscape images to stay visible */
+    object-fit: contain;
+  }
+
+#photo-6 {
+    margin-top: 2rem;
+
 }
-  
+
+#photo-7 {
+    margin-bottom: 2rem;
+}
+
+.gift-registry {
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
 }
