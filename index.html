@@ -1,143 +1,28 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Melvin & Hope's Wedding</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
-    <style>
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Ephesis&family=Imperial+Script&family=Quicksand:wght@300..700&display=swap');
-</style>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Melvin & Hope</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     
 </head>
 <body>
-    <nav id="navbar-index">
-        <div id="hamburger">&#9776;</div> <!-- Hamburger icon -->
-        <ul id="nav-menu">
-            <li id="logo"><a href="index.html">M & H</a></li>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#pink-section">Our Story</a></li>
-            <li><a href="event-guide.html">Event Guide</a></li>
-            <li><a href="entourage.html">Entourage</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="gift-registry.html">Gift Guide</a></li>
-            <li><a id="menu-border" href="https://forms.gle/22AwmzbaR7Rg8vHp9" target="_blank">RSVP</a></li>
-        </ul>
-    </nav>
+  <section class="hero">
+  <div class="overlay"></div>
 
-    <header class="hero">
-        <div class="overlay"></div>
-        <div class="hero-content">
-            <div class="title-line">
-                <h1>Melvin</h1>
-                <h1 id="and">&</h1>
-                <h1>Hope</h1>
-              </div>
-            <p id="bible-verse">Let marriage be held in honor among all.<br>Hebrews 13:4</p>
-            <button class="default-button open-invitation" onclick="location.href='#pink-section'">OPEN INVITATION</button>
-        </div>
-    </header>
-
-    <section id="countdown-section">
-        <div id="countdown">
-          <span id="days" class="countdown-number">00</span> Days
-          <span id="hours" class="countdown-number">00</span> Hours
-          <span id="minutes" class="countdown-number">00</span> Minutes
-          <span id="seconds" class="countdown-number">00</span> Seconds
-        </div>
-      </section>
-    
-    <!-- Our Story section -->
-    <section id="pink-section">
-        <div id="our-story-section">
-            <div class="content">
-                <img src="Assets/photo-2-floral.png" alt="Our Story Photo">
-            </div>
-            <div class="text">
-                <h2>Fate found us when 
-                    the world stood still.</h2>
-                <p>Melvin and Hope’s journey began in March 2020, when fate brought them together under the most unexpected circumstances. 
-                    <br><br>Before the world came to a standstill, Melvin was on a mountain climbing expedition at Mt. Hamiguitan, while Hope was enjoying the island life in Siargao.  <a href="our-story.html"><strong>read more >>></strong></a></p>
-            </div>
-        </div>
-        
-    </section>
-    <!-- Invitation section -->
-    <section id="invitation-section">
-        <div id="youre-invited"> 
-            <div class="text">
-                <h2>Be part of our unforgettable moment.</h2>
-                <br>
-                <h3>DATE & TIME</h3>
-                <p>August 9, 2025 at 10:00 AM</p>
-                <br>
-                <br>
-                <h3>CEREMONY</h3>
-                <p>St. Francis of Assisi Parish Church 
-                    <br>General Trias, Cavite</p>
-                <br>
-                <br>
-                <h3>RECEPTION</h3>
-                <p>Calle Real Restaurant<br>Tanza, Cavite</p>
-            </div>
-            <img src="Assets/photo-3-floral.png" alt="Invitation Photo">
-        </div>
-    </section>
-
-    <!-- Gift guide section -->
-    <section id="gift-section">
-        <div id="present">
-            <div class="text" id="your-presence">
-                <h2>Your presence at our 
-                    <br>wedding is the only 
-                    <br>present we require.</h2>
-            </div>
-            <div class="text" id="give-gift">
-                <p>But if you wish to bless us on our special day, 
-                    <br>a monetary gift would be truly appreciated.</p>
-                <br>
-                <button class="default-button btn open-invitation" onclick="location.href='gift-registry.html'">Give a Gift</button>
-            </div>
-        </div>
-    </section>
-
-    <section id="gift-guide-photo">
-        <img id="gift-photo" src="Assets/photo-4.jpg" alt="Gift Guide Photo">
-    </section>
-
-    <!-- RSVP section -->
-    <section id="rsvp-section">
-        <div id="rsvp">
-            <div class="text" id="we-hope">
-                <h2>We hope to see you 
-                    <br>from the altar.</h2>
-            </div>
-            <div class="text" id="cheers">
-                <p>We kindly request your response by July 1, 2025. <br><br>Cheers!</p>
-            </div>
-        </div>
-
-        <div>
-            <!-- <button id="rsvp-button" onclick="location.href='forms.gle/22AwmzbaR7Rg8vHp9'">RSVP now</button> -->
-            <a id="rsvp-button" class="default-button btn open-invitation" href="https://forms.gle/22AwmzbaR7Rg8vHp9" target="_blank" rel="noopener noreferrer">RSVP now</a>
-
-        </div>
-        
-        <div>
-            <img id="pink-bike" src="Assets/pink-bike.png" alt="Our Story Photo">
-        </div>
-    </section>
-    
-    <footer class="wedding-footer">
-      <div class="footer-content">
-        <p>With love, laughter, and happily ever after…</p>
-        <p>Join us in celebrating our big day. 💕</p>
-        <p class="hashtag">#SayIDoWithMoradillos</p>
-        <p>&copy; 2025 Melvin & Hope's Wedding. All rights reserved.</p>
-      </div>
-    </footer>
+  <div class="hero-content">
+    <div class="hero-h1">
+      <h1>Melvin</h1>
+      <h1>& Hope</h1>
+    </div>
+    <p id="bible-verse">cordially invite you to witness their joyful union in marriage.</p>
+  </div>
+    <a href="transition.html" class="btn" id="open-invitation-btn">OPEN INVITATION</a>
+</section>
+  <script src="script.js"></script>
 </body>
 </html>
