@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Transition</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Quicksand:wght@300..700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      background-color: #DEB0B9;
+      color: white;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards;
+    }
+
+    h1 {
+      font-size: 4rem;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Opening Invitation...</h1>
+  <script>
+    setTimeout(() => {
+      window.location.href = "invitation.html";
+    }, 1500); // Allow animation to complete
+  </script>
+</body>
+</html>
