@@ -65,3 +65,10 @@ function unmuteAndPlay() {
   document.addEventListener('touchstart', unmuteAndPlay);
   document.addEventListener('scroll', unmuteAndPlay);
 
+// h1 fade in
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('h1').forEach(h1 => {
+    h1.classList.add('fade-in');
+  });
+});
+
