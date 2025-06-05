@@ -901,6 +901,13 @@ background-color: #F6D5CF; /* Change this to your desired solid color */
     box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.3); /* x-offset, y-offset, blur, color */
 }
 
+#transition {
+  font-family: 'Corinthia', 'serif';
+  opacity: 1;
+  padding: 50px;
+  line-height: 1;
+}
+
 /* mobile */
 
 /* Responsive adjustments for screens smaller than 768px */
