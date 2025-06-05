@@ -168,14 +168,20 @@ a {
 
 
 h1 {
-    font-family: 'Corinthia';
-    font-size: 7rem;
-    font-weight: 700;
-    color:#fff;
-    margin: 0;
-    /*text-shadow: 2px 2px 5px rgba(245, 245, 245, 1) **/
-    line-height: 0.55
-; 
+  font-family: 'Corinthia';
+  font-size: 7rem;
+  font-weight: 700;
+  color:#fff;
+  margin: 0;
+  line-height: 0.55; 
+  opacity: 0;
+  transform: translateX(-20px); /* optional: subtle slide effect */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+h1.fade-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 h2, h3, h4 {
