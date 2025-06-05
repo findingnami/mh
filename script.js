@@ -113,3 +113,20 @@ document.addEventListener('DOMContentLoaded', () => {
     h1.classList.add('fade-in');
   });
 });
+
+document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      const answer = button.nextElementSibling;
+      const isOpen = answer.classList.contains('open');
+
+      document.querySelectorAll('.faq-answer').forEach(a => {
+        a.classList.remove('open');
+        a.previousElementSibling.classList.remove('active');
+      });
+
+      if (!isOpen) {
+        answer.classList.add('open');
+        button.classList.add('active');
+      }
+    });
+  });
