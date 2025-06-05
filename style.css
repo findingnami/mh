@@ -127,6 +127,7 @@ a {
     position: relative;
     z-index: 2; /* Ensure it appears above the overlay */
     padding: 50px;
+    margin-top: 40px;
 }
 
 .btn {
