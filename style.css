@@ -675,6 +675,9 @@ background-color: #F6D5CF; /* Change this to your desired solid color */
 
 #color-palette {
     text-align: center;
+    font-family: 'Corinthia', serif;
+    font-size: 3rem;
+    color: #7D5060;
 }
 
 .entourage {
