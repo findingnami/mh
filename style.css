@@ -925,7 +925,7 @@ background-color: #F6D5CF; /* Change this to your desired solid color */
 #faq-section {
   max-width: 700px;
   margin: auto;
-  padding: 2rem;
+  padding: 40px;
   font-family: 'Quicksand', 'sans serif';
 }
 
@@ -941,6 +941,7 @@ background-color: #F6D5CF; /* Change this to your desired solid color */
   border: none;
   width: 100%;
   text-align: left;
+  font-family: 'Quicksand', 'sans serif';
   font-size: 1.1rem;
   font-weight: bold;
   cursor: pointer;
