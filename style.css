@@ -132,7 +132,7 @@ a {
 
 .btn {
   position: absolute;
-  bottom: 8rem; /* Pushes it 3rem up from the bottom */
+  bottom: 7rem; 
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
@@ -1101,8 +1101,8 @@ background-color: #F6D5CF; /* Change this to your desired solid color */
 
     #bible-verse {
         font-size: 1.1rem;
-        margin: 1.5rem 0;
-        padding: 0 1rem;
+        margin: 1rem 1.5rem;
+        line-height: 1.2;
     }
 
     .default-button {
