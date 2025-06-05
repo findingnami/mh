@@ -1,20 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const links = document.querySelectorAll(".navbar a");
-    
-    links.forEach(link => {
-        link.addEventListener("click", function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute("href").substring(1);
-            const targetElement = document.getElementById(targetId);
-            
-            window.scrollTo({
-                top: targetElement.offsetTop - document.querySelector(".navbar").offsetHeight,
-                behavior: "smooth"
-            });
-        });
-    });
-});
-
+// countdown
 const countdown = () => {
     const eventDate = new Date("August 9, 2025 10:00:00").getTime();
     const now = new Date().getTime();
@@ -38,15 +22,7 @@ const countdown = () => {
   
   setInterval(countdown, 1000);
   
-document.addEventListener("DOMContentLoaded", function () {
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
-
-    hamburger.addEventListener('click', () => {
-      navMenu.classList.toggle('show');
-    });
-});
-
+// carousel
 const images = document.querySelectorAll('.carousel-img');
   let current = 0;
 
@@ -56,7 +32,7 @@ const images = document.querySelectorAll('.carousel-img');
     images[current].classList.add('active');
   }, 4000); // every 4 seconds
 
-
+// gallery
 const gallery = document.querySelector('.gallery');
   
   gallery.addEventListener('mouseover', () => {
@@ -67,15 +43,8 @@ const gallery = document.querySelector('.gallery');
     gallery.style.animationPlayState = 'running';
   });
 
-const playBtn = document.getElementById('playMusicBtn');
-  const bgMusic = document.getElementById('bgMusic');
 
-  playBtn.addEventListener('click', () => {
-    bgMusic.play();
-    playBtn.style.display = 'none'; // hide button after play (optional)
-  });
-
-
+// music
 const bgMusic = document.getElementById('bgMusic');
 
 function unmuteAndPlay() {
