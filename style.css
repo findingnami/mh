@@ -987,6 +987,10 @@ background-color: #F6D5CF; /* Change this to your desired solid color */
   padding: 0.5rem 0;
 }
 
+#open-invitation-btn {
+  white-space: nowrap;
+}
+
 
 /* mobile */
 
