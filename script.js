@@ -1,34 +1,4 @@
-/* nav
-document.addEventListener("DOMContentLoaded", function() {
-    const links = document.querySelectorAll(".navbar a");
-    
-    links.forEach(link => {
-        link.addEventListener("click", function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute("href").substring(1);
-            const targetElement = document.getElementById(targetId);
-            
-            window.scrollTo({
-                top: targetElement.offsetTop - document.querySelector(".navbar").offsetHeight,
-                behavior: "smooth"
-            });
-        });
-    });
-}); */
-
-/* hamburger menu
-  document.addEventListener("DOMContentLoaded", function () {
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
-
-    hamburger.addEventListener('click', () => {
-      navMenu.classList.toggle('show');
-    });
-}); */
-
 document.addEventListener('DOMContentLoaded', () => {
-  console.log("Script loaded and running");
-
 
 /* countdown */
   const countdown = () => {
@@ -76,35 +46,34 @@ document.addEventListener('DOMContentLoaded', () => {
     gallery.style.animationPlayState = 'running';
   });
 
-/* music */
+/* music 
   const playBtn = document.getElementById('playMusicBtn');
   const bgMusic = document.getElementById('bgMusic');
 
   playBtn.addEventListener('click', () => {
     bgMusic.play();
     playBtn.style.display = 'none'; // hide button after play (optional)
-  });
-
-
-// h1 fade in
-/* const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        console.log('Intersecting:', entry.target);
-        entry.target.classList.add('fade-in');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.1
-  });
-
-  const h1Elements = document.querySelectorAll('h1');
-  h1Elements.forEach(h1 => {
-    console.log('Observing:', h1);
-    observer.observe(h1);
   }); */
 
+    const bgMusic = document.getElementById('bgMusic');
+    
+    function unmuteAndPlay() {
+        bgMusic.muted = false;
+        bgMusic.play().catch(err => {
+          // Optional: Handle any playback errors
+          console.log("Playback failed:", err);
+        });
+    
+        // Remove the event listeners after first interaction
+        document.removeEventListener('click', unmuteAndPlay);
+        document.removeEventListener('touchstart', unmuteAndPlay);
+        document.removeEventListener('scroll', unmuteAndPlay);
+      }
+    
+      // Listen for any user interaction
+      document.addEventListener('click', unmuteAndPlay);
+      document.addEventListener('touchstart', unmuteAndPlay);
+      document.addEventListener('scroll', unmuteAndPlay);
 
 });
 
@@ -130,3 +99,4 @@ document.querySelectorAll('.faq-question').forEach(button => {
       }
     });
   });
+
