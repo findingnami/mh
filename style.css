@@ -1253,4 +1253,11 @@ background-color: #F6D5CF; /* Change this to your desired solid color */
     margin-left: 20px;
 }
 
+.gallery-img {
+    max-height: 400px;
+    height: auto;
+    width: auto;
+    object-fit: cover;
+  }
+
 }
